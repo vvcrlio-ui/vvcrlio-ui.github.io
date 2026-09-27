@@ -1,4 +1,4 @@
-// Rotating 3D head drawn in characters behind the page.
+// Rotating classical bust drawn in characters behind the page.
 //
 // Rendering follows the background on maximiliankaspar.com: three.js
 // AsciiEffect over a MeshNormalMaterial, character set " .:-=+*1#%@0$!*",
@@ -12,9 +12,12 @@ import * as THREE from 'three';
 import { AsciiEffect } from 'three/addons/effects/AsciiEffect.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+// Public-domain (CC0) scans of plaster casts, SMK – Statens Museum for Kunst,
+// Copenhagen; cropped, oriented and reduced to ~38k faces for the web.
 const MODELS = [
-  { file: 'assets/models/nefertiti.glb', credit: 'Nefertiti bust scan by Fraunhofer IGD (CC BY-NC)' },
-  { file: 'assets/models/lee-perry-smith.glb', credit: 'Head scan by Lee Perry-Smith / Infinite Realities (CC BY 3.0)' }
+  { file: 'assets/models/david.glb', credit: 'Head of David after Michelangelo, 3D scan: SMK, public domain' },
+  { file: 'assets/models/antinous.glb', credit: 'Antinous with ivy wreath, 3D scan: SMK, public domain' },
+  { file: 'assets/models/amazon.glb', credit: 'Head of an Amazon, 3D scan: SMK, public domain' }
 ];
 const CHARS = ' .:-=+*1#%@0$!*';
 const SPEED = 0.12;      // rad/s, whole head
@@ -122,6 +125,7 @@ function start() {
   const material = new THREE.MeshNormalMaterial({ side: THREE.DoubleSide, clippingPlanes: [clip] });
   const head = new THREE.Group();
   head.rotation.y = 0.35;
+  head.position.y = 0.16;          // sit high, above the name
   scene.add(head);
 
   function resize() {

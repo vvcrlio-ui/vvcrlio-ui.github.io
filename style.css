@@ -187,8 +187,8 @@ a:hover .roll > span, a:focus-visible .roll > span { transform: translateY(-100%
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1.5rem 1rem;
+  justify-content: flex-end;   /* name sits low, like the reference headline, leaving the bust's face clear */
+  padding: 1.5rem 1rem 2.25rem;
   text-align: center;
 }
 

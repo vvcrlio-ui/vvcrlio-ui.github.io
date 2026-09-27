@@ -14,7 +14,8 @@ A plain HTML + CSS academic homepage (no build step), served by GitHub Pages.
 - `cv.pdf` — add your CV at the repo root so the "cv" link works.
 
 ## 3D model credits
-- `assets/models/nefertiti.glb` — 3D scan of a copy of the Nefertiti bust, Fraunhofer IGD, CC BY-NC.
-- `assets/models/lee-perry-smith.glb` — head scan by Lee Perry-Smith / Infinite Realities, CC BY 3.0.
-
-Both come from the three.js examples. The site credits the model on show in its footer.
+Scans of plaster casts from SMK – Statens Museum for Kunst (Royal Cast Collection), released into the
+public domain (CC0) via open.smk.dk. Pedestals were cropped and the meshes reduced for the web.
+- `assets/models/david.glb` — Head of David, after Michelangelo (KAS2232).
+- `assets/models/antinous.glb` — Portrait of Antinous with ivy wreath (DEP454).
+- `assets/models/amazon.glb` — Head of an Amazon, Sciarra type (KAS615).

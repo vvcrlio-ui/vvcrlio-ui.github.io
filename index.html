@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiang Wan (万翔)</title>
+  <!-- TODO: replace the description with one sentence about your research. -->
+  <meta name="description" content="Xiang Wan (万翔) — academic homepage: research, publications, projects and contact.">
+  <meta name="author" content="Xiang Wan">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f3f2ec">
+  <link rel="canonical" href="https://vvcrlio-ui.github.io/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Xiang Wan (万翔)">
+  <meta property="og:description" content="Academic homepage: research, publications, projects and contact.">
+  <meta property="og:url" content="https://vvcrlio-ui.github.io/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..800&family=IBM+Plex+Mono:wght@400;500&family=Silkscreen&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Xiang Wan",
+    "alternateName": "万翔",
+    "url": "https://vvcrlio-ui.github.io/",
+    "sameAs": ["https://github.com/vvcrlio-ui"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="frame site-header__inner">
+      <a class="brand" href="#top" aria-label="Xiang Wan, back to top">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="12" height="12" fill="var(--red)"/>
+          <circle cx="23" cy="9" r="6" fill="var(--yellow)"/>
+          <path d="M3 29 L15 29 L9 18 Z" fill="var(--blue)"/>
+          <rect x="18" y="18" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span class="brand__name">Xiang Wan</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!-- TODO: add your CV as assets/cv.pdf -->
+          <li><a class="nav-cv" href="assets/cv.pdf">CV <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="frame" tabindex="-1">
+
+    <!-- ============================================================
+         INTRO — identity, one-paragraph summary, primary entry points
+         ============================================================ -->
+    <section class="intro" id="top" aria-labelledby="name">
+      <div class="intro__text">
+        <!-- TODO: your current position -->
+        <p class="label">PhD Student · [Research Area]</p>
+
+        <h1 id="name" class="name">
+          <span class="name__en">Xiang Wan</span>
+          <span class="name__zh" lang="zh-CN">万翔</span>
+        </h1>
+
+        <!-- TODO: department, university, advisor -->
+        <p class="affiliation">
+          [Department of …], [University]<br>
+          Advised by <a href="#">[Advisor Name]</a>
+        </p>
+
+        <!-- TODO: 2–3 sentences. What problem, which methods, why it matters. -->
+        <p class="lede">
+          I study <strong>[core research topic]</strong>. My work develops
+          [methods / systems / theory] for [problem], with a focus on
+          [key property, e.g. robustness, efficiency, interpretability] and
+          applications in [domain].
+        </p>
+
+        <p class="interests">
+          <span class="interests__label">Interests</span>
+          <span>[Topic A]</span>
+          <span>[Topic B]</span>
+          <span>[Topic C]</span>
+        </p>
+
+        <ul class="entries" aria-label="Quick links">
+          <li><a href="#publications">Publications <span aria-hidden="true">↓</span></a></li>
+          <li><a href="#projects">Projects <span aria-hidden="true">↓</span></a></li>
+          <li><a href="assets/cv.pdf">CV (PDF) <span aria-hidden="true">↗</span></a></li>
+          <!-- TODO: your email -->
+          <li><a href="mailto:you@university.edu">Email <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://scholar.google.com/">Google Scholar <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/vvcrlio-ui">GitHub <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Decorative: the letters of the name, turning toward the pointer. -->
+      <figure class="field" aria-hidden="true">
+        <div class="field__canvas-wrap">
+          <canvas class="field__canvas"></canvas>
+        </div>
+        <figcaption class="field__caption">
+          <span>Fig. 00</span>
+          <span>Name field · follows cursor</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ============================================================
+         01 ABOUT
+         ============================================================ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <header class="section__head">
+        <span class="section__index">01</span>
+        <h2 id="about-title">About</h2>
+      </header>
+      <div class="section__body">
+        <div class="prose">
+          <!-- TODO: a slightly longer bio, written in first or third person. -->
+          <p>
+            I am a [year]-year PhD student at [University], working with
+            [Advisor Name] in the [Lab Name]. Before that, I received my
+            [degree] from [University]. My research sits at the intersection
+            of [field A] and [field B].
+          </p>
+          <p>
+            I am currently interested in [open question 1] and [open question 2].
+            I am happy to talk about collaborations — feel free to
+            <a href="#contact">get in touch</a>.
+          </p>
+        </div>
+
+        <h3 class="subhead">Education</h3>
+        <ol class="rows">
+          <li class="row">
+            <span class="row__date">2023 — now</span>
+            <span class="row__main"><strong>Ph.D. in [Field]</strong>, [University]</span>
+          </li>
+          <li class="row">
+            <span class="row__date">2019 — 2023</span>
+            <span class="row__main"><strong>B.Sc. in [Field]</strong>, [University]</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 NEWS — newest first; keep ~5–8 items
+         ============================================================ -->
+    <section class="section" id="news" aria-labelledby="news-title">
+      <header class="section__head">
+        <span class="section__index">02</span>
+        <h2 id="news-title">News</h2>
+      </header>
+      <div class="section__body">
+        <ol class="rows">
+          <li class="row">
+            <time class="row__date" datetime="2026-09">2026.09</time>
+            <span class="row__main">Paper “[Title]” accepted to <strong>[Venue 2026]</strong>.</span>
+          </li>
+          <li class="row">
+            <time class="row__date" datetime="2026-06">2026.06</time>
+            <span class="row__main">Started a research internship at [Organization].</span>
+          </li>
+          <li class="row">
+            <time class="row__date" datetime="2026-03">2026.03</time>
+            <span class="row__main">Gave a talk on [topic] at [event].</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03 PUBLICATIONS — grouped by year, newest first.
+         Copy one <li class="pub"> block per paper.
+         ============================================================ -->
+    <section class="section" id="publications" aria-labelledby="pub-title">
+      <header class="section__head">
+        <span class="section__index">03</span>
+        <h2 id="pub-title">Publications</h2>
+        <p class="section__note">* equal contribution<br><a href="https://scholar.google.com/">Full list on Google Scholar ↗</a></p>
+      </header>
+      <div class="section__body">
+
+        <h3 class="year">2026</h3>
+        <ol class="pubs">
+          <li class="pub">
+            <p class="pub__venue"><span class="pub__abbr">[CONF]</span> 2026</p>
+            <div class="pub__main">
+              <h4 class="pub__title">Paper Title Goes Here: A Concise Statement of the Contribution</h4>
+              <p class="pub__authors"><span class="me">Xiang Wan</span>*, Coauthor A*, Coauthor B, Advisor C</p>
+              <p class="pub__where"><em>Proceedings of [Full Conference Name]</em>, 2026 <span class="badge">Oral</span></p>
+              <div class="pub__links">
+                <a href="#">PDF</a>
+                <a href="#">arXiv</a>
+                <a href="#">Code</a>
+                <a href="#">Project page</a>
+                <details class="bib">
+                  <summary>BibTeX</summary>
+<pre><code>@inproceedings{wan2026title,
+  title     = {Paper Title Goes Here},
+  author    = {Wan, Xiang and A, Coauthor and B, Coauthor and C, Advisor},
+  booktitle = {Proceedings of [Conference]},
+  year      = {2026}
+}</code></pre>
+                </details>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="year">2025</h3>
+        <ol class="pubs">
+          <li class="pub">
+            <p class="pub__venue"><span class="pub__abbr">[JOURNAL]</span> 2025</p>
+            <div class="pub__main">
+              <h4 class="pub__title">Another Paper Title on a Related Problem</h4>
+              <p class="pub__authors">Coauthor D, <span class="me">Xiang Wan</span>, Advisor C</p>
+              <p class="pub__where"><em>[Journal Name]</em>, vol. X, 2025</p>
+              <div class="pub__links">
+                <a href="#">PDF</a>
+                <a href="#">DOI</a>
+                <details class="bib">
+                  <summary>BibTeX</summary>
+<pre><code>@article{d2025another,
+  title   = {Another Paper Title on a Related Problem},
+  author  = {D, Coauthor and Wan, Xiang and C, Advisor},
+  journal = {[Journal Name]},
+  year    = {2025}
+}</code></pre>
+                </details>
+              </div>
+            </div>
+          </li>
+          <li class="pub">
+            <p class="pub__venue"><span class="pub__abbr">arXiv</span> 2025</p>
+            <div class="pub__main">
+              <h4 class="pub__title">A Preprint Title Under Review</h4>
+              <p class="pub__authors"><span class="me">Xiang Wan</span>, Coauthor E</p>
+              <p class="pub__where"><em>arXiv preprint</em>, 2025</p>
+              <div class="pub__links">
+                <a href="#">arXiv</a>
+                <a href="#">Code</a>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04 PROJECTS — software, datasets, demos
+         ============================================================ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <header class="section__head">
+        <span class="section__index">04</span>
+        <h2 id="projects-title">Projects</h2>
+      </header>
+      <div class="section__body">
+        <ol class="projects">
+          <li class="project">
+            <h3 class="project__name"><a href="https://github.com/vvcrlio-ui">[project-name]</a></h3>
+            <p class="project__desc">One sentence on what it does and who it is for. Mention the paper it accompanies, if any.</p>
+            <p class="project__meta">Python · PyTorch · 2026</p>
+          </li>
+          <li class="project">
+            <h3 class="project__name"><a href="#">[dataset-or-tool]</a></h3>
+            <p class="project__desc">A dataset / benchmark / tool released with [paper]. Key numbers: [size, scope].</p>
+            <p class="project__meta">Dataset · 2025</p>
+          </li>
+          <li class="project">
+            <h3 class="project__name"><a href="#">[course-project-or-demo]</a></h3>
+            <p class="project__desc">A smaller project or interactive demo worth sharing.</p>
+            <p class="project__meta">Web · 2024</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05 TEACHING & SERVICE
+         ============================================================ -->
+    <section class="section" id="service" aria-labelledby="service-title">
+      <header class="section__head">
+        <span class="section__index">05</span>
+        <h2 id="service-title">Teaching &amp; Service</h2>
+      </header>
+      <div class="section__body">
+        <ol class="rows">
+          <li class="row">
+            <span class="row__date">Fall 2025</span>
+            <span class="row__main">Teaching Assistant, <strong>[Course Code: Course Name]</strong>, [University]</span>
+          </li>
+          <li class="row">
+            <span class="row__date">2024 — now</span>
+            <span class="row__main">Reviewer for [Venue A], [Venue B]</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06 CONTACT
+         ============================================================ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <header class="section__head">
+        <span class="section__index">06</span>
+        <h2 id="contact-title">Contact</h2>
+      </header>
+      <div class="section__body">
+        <dl class="contact">
+          <div class="contact__row">
+            <dt>Email</dt>
+            <dd><a class="big-link" href="mailto:you@university.edu">you@university.edu</a></dd>
+          </div>
+          <div class="contact__row">
+            <dt>Office</dt>
+            <dd>Room [000], [Building]<br>[University], [City, Country]</dd>
+          </div>
+          <div class="contact__row">
+            <dt>Elsewhere</dt>
+            <dd>
+              <ul class="inline-list">
+                <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+                <li><a href="https://github.com/vvcrlio-ui">GitHub</a></li>
+                <li><a href="https://orcid.org/">ORCID</a></li>
+                <li><a href="assets/cv.pdf">CV (PDF)</a></li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="frame site-footer__inner">
+      <p>© <span data-year>2026</span> Xiang Wan · 万翔</p>
+      <p>Last updated <time datetime="2026-09">Sep 2026</time></p>
+      <p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -7,63 +7,77 @@
   <meta name="description" content="Xiang Wan (万翔) — academic homepage: research, publications, and contact.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Four-column guide lines, as on maximiliankaspar.com -->
+  <div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
   <header class="site-header">
-    <a class="wordmark" href="#top">xiang wan <span class="zh">万翔</span></a>
+    <a class="wordmark is-active" href="#top">xiang wan <span class="zh">万翔</span></a>
     <nav aria-label="Main">
-      <a href="#about">about</a>
-      <a href="#news">news</a>
-      <a href="#publications">publications</a>
-      <a href="#experience">experience</a>
-      <a href="#contact">contact</a>
+      <a href="#about"><span class="roll"><span data-label="about">about</span></span></a>
+      <a href="#news"><span class="roll"><span data-label="news">news</span></span></a>
+      <a href="#publications"><span class="roll"><span data-label="publications">publications</span></span></a>
+      <a href="#experience"><span class="roll"><span data-label="experience">experience</span></span></a>
+      <a href="#contact"><span class="roll"><span data-label="contact">contact</span></span></a>
     </nav>
   </header>
 
   <main id="top">
 
     <!-- ===== Intro ===== -->
-    <section class="intro">
-      <p class="lead">
-        Xiang Wan is a researcher at <a href="#">[Your University]</a>,
-        working on <em>[research area 1]</em> and <em>[research area 2]</em>.
+    <section class="intro" id="intro">
+      <h1 class="name">xiang<br>wan <span class="zh" lang="zh">万翔</span></h1>
+      <p class="tagline">
+        Researcher at [Your University], working on
+        [research area 1] and [research area 2].
       </p>
     </section>
 
+    <!-- Research topics, scrolling (static when reduced motion is on) -->
+    <div class="bands" aria-hidden="true">
+      <div class="band"><div class="band__track">
+        <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
+        <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
+      </div></div>
+      <div class="band band--reverse"><div class="band__track">
+        <span>[method a]</span><span>[method b]</span><span>[application c]</span>
+        <span>[method a]</span><span>[method b]</span><span>[application c]</span>
+      </div></div>
+    </div>
+
     <!-- ===== About ===== -->
     <section id="about" class="row">
-      <h2 class="label">about</h2>
+      <div class="label">
+        <h2>about</h2>
+        <img class="portrait" src="assets/portrait.svg" alt="Portrait of Xiang Wan" width="160" height="200">
+      </div>
       <div class="content">
-        <div class="about">
-          <img class="portrait" src="assets/portrait.svg" alt="Portrait of Xiang Wan" width="160" height="200">
-          <div>
-            <p>
-              I am a [PhD student / postdoc / assistant professor] in the
-              [Department] at [University], advised by
-              <a href="#">[Advisor Name]</a>. My research focuses on
-              [one-sentence summary of your research questions and methods].
-            </p>
-            <p>
-              Before that, I received my [degree] from [University] in [year].
-              I am broadly interested in [topic], [topic], and [topic].
-            </p>
-            <p class="links">
-              <a href="cv.pdf">cv</a>
-              <a href="https://scholar.google.com/">google scholar</a>
-              <a href="https://github.com/vvcrlio-ui">github</a>
-              <a href="mailto:your.email@university.edu">email</a>
-            </p>
-          </div>
-        </div>
+        <p>
+          I am a [PhD student / postdoc / assistant professor] in the
+          [Department] at [University], advised by
+          <a href="#">[Advisor Name]</a>. My research focuses on
+          [one-sentence summary of your research questions and methods].
+        </p>
+        <p>
+          Before that, I received my [degree] from [University] in [year].
+          I am broadly interested in [topic], [topic], and [topic].
+        </p>
+        <p class="tags">
+          <a href="cv.pdf">cv</a>
+          <a href="https://scholar.google.com/">google scholar</a>
+          <a href="https://github.com/vvcrlio-ui">github</a>
+          <a href="mailto:your.email@university.edu">email</a>
+        </p>
       </div>
     </section>
 
     <!-- ===== News ===== -->
     <section id="news" class="row">
-      <h2 class="label">news</h2>
+      <div class="label"><h2>news</h2></div>
       <div class="content">
         <ul class="dated">
           <li><time>2026.09</time><span>Paper “[Title]” accepted to [Venue 2026].</span></li>
@@ -75,36 +89,29 @@
 
     <!-- ===== Publications ===== -->
     <section id="publications" class="row">
-      <h2 class="label">publications</h2>
-      <div class="content">
+      <div class="label">
+        <h2>publications</h2>
         <p class="note">* equal contribution</p>
+      </div>
+      <div class="content">
         <ol class="pubs">
           <li>
-            <span class="year">2026</span>
-            <div>
-              <a class="pub-title" href="#">[Paper Title One: A Clear and Descriptive Name]</a>
-              <p class="authors"><b>Xiang Wan</b>, [Co-author A], [Co-author B]</p>
-              <p class="venue">[Conference / Journal] 2026</p>
-              <p class="pub-links"><a href="#">pdf</a><a href="#">code</a><a href="#">bibtex</a></p>
-            </div>
+            <p class="meta">[venue] 2026</p>
+            <a class="pub-title" href="#">[Paper Title One: A Clear and Descriptive Name]</a>
+            <p class="authors"><b>Xiang Wan</b>, [Co-author A], [Co-author B]</p>
+            <p class="tags"><a href="#">pdf</a><a href="#">code</a><a href="#">bibtex</a></p>
           </li>
           <li>
-            <span class="year">2025</span>
-            <div>
-              <a class="pub-title" href="#">[Paper Title Two]</a>
-              <p class="authors">[Co-author A]*, <b>Xiang Wan</b>*, [Co-author C]</p>
-              <p class="venue">[Conference / Journal] 2025</p>
-              <p class="pub-links"><a href="#">pdf</a><a href="#">arxiv</a></p>
-            </div>
+            <p class="meta">[venue] 2025</p>
+            <a class="pub-title" href="#">[Paper Title Two]</a>
+            <p class="authors">[Co-author A]*, <b>Xiang Wan</b>*, [Co-author C]</p>
+            <p class="tags"><a href="#">pdf</a><a href="#">arxiv</a></p>
           </li>
           <li>
-            <span class="year">2024</span>
-            <div>
-              <a class="pub-title" href="#">[Paper Title Three]</a>
-              <p class="authors"><b>Xiang Wan</b>, [Co-author D]</p>
-              <p class="venue">[Workshop] 2024</p>
-              <p class="pub-links"><a href="#">pdf</a></p>
-            </div>
+            <p class="meta">[workshop] 2024</p>
+            <a class="pub-title" href="#">[Paper Title Three]</a>
+            <p class="authors"><b>Xiang Wan</b>, [Co-author D]</p>
+            <p class="tags"><a href="#">pdf</a></p>
           </li>
         </ol>
       </div>
@@ -112,7 +119,7 @@
 
     <!-- ===== Experience / Education ===== -->
     <section id="experience" class="row">
-      <h2 class="label">experience</h2>
+      <div class="label"><h2>experience</h2></div>
       <div class="content">
         <ul class="dated">
           <li><time>2024 – now</time><span><b>[Role]</b>, [Institution]</span></li>
@@ -124,7 +131,7 @@
 
     <!-- ===== Teaching & Service ===== -->
     <section id="service" class="row">
-      <h2 class="label">teaching &amp; service</h2>
+      <div class="label"><h2>teaching &amp; service</h2></div>
       <div class="content">
         <ul class="plain">
           <li>Teaching assistant, [Course name], [Term]</li>
@@ -135,13 +142,13 @@
 
     <!-- ===== Contact ===== -->
     <section id="contact" class="row">
-      <h2 class="label">contact</h2>
+      <div class="label"><h2>contact</h2></div>
       <div class="content">
-        <p>
-          <a href="mailto:your.email@university.edu">your.email@university.edu</a><br>
-          [Office / Building, Room]<br>
-          [University, City, Country]
-        </p>
+        <dl class="contact">
+          <dt>m:</dt><dd><a href="mailto:your.email@university.edu">your.email@university.edu</a></dd>
+          <dt>gh:</dt><dd><a href="https://github.com/vvcrlio-ui">vvcrlio-ui</a></dd>
+          <dt>a:</dt><dd>[Office / Building, Room], [University, City, Country]</dd>
+        </dl>
       </div>
     </section>
 
@@ -152,5 +159,38 @@
     <a href="#top">back to top ↑</a>
   </footer>
 
+  <script>
+    // Move the ■ marker in the header to the section currently in view.
+    (function () {
+      var links = document.querySelectorAll('.site-header a');
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      if (!('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) { a.classList.remove('is-active'); });
+          (map[e.target.id] || map.top).classList.add('is-active');
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      document.querySelectorAll('main > section[id]').forEach(function (s) { io.observe(s); });
+    })();
+
+    // Scrolling bands: the track holds two identical halves and slides by -50%,
+    // so each half must be at least as wide as the screen for a seamless loop.
+    (function () {
+      document.querySelectorAll('.band__track').forEach(function (track) {
+        var n = track.children.length / 2;
+        var unit = Array.prototype.slice.call(track.children, 0, n)
+          .map(function (el) { return el.outerHTML; }).join('');
+        var reps = 1;
+        while (track.scrollWidth / 2 < window.innerWidth * 1.2 && reps < 10) {
+          reps++;
+          var half = new Array(reps + 1).join(unit);
+          track.innerHTML = half + half;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

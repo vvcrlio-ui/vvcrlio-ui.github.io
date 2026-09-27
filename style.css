@@ -343,6 +343,7 @@ h2, h3 {
   margin: 0;
 }
 .contact { grid-template-columns: 2.5rem 1fr; }
+.facts--wide { margin-top: 0; }
 .contact dd, .facts dd { margin: 0; }
 .facts { margin-top: 1.25rem; }
 
@@ -466,7 +467,7 @@ h2, h3 {
 @media (max-width: 767px) {
   :root { --pad: 7px; --hh: 44px; }
   body { font-size: 1rem; }
-  .site-header { font-size: .71875rem; }        /* 11.5px: "publications" fits a quarter column */
+  .site-header { font-size: .75rem; }
   /* no room for a hanging ■ between columns: underline the current item */
   .site-header [data-item]::before { display: none; }
   .site-header [data-item].is-active .roll { box-shadow: inset 0 -1.5px 0 currentColor; }

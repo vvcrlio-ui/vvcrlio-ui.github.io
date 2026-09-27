@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Xiang WAN (万翔)</title>
-  <meta name="description" content="Xiang Wan (万翔) is a researcher at [Your University] working on [research area 1] and [research area 2]. Publications, CV and contact.">
+  <meta name="description" content="Xiang Wan (万翔) is a Master’s student in Computer Science at Université Paris-Saclay, interested in computational social science and predictability.">
   <link rel="canonical" href="https://vvcrlio-ui.github.io/">
   <meta name="author" content="Xiang WAN (万翔)">
   <!-- Link previews (WeChat, Slack, X, LinkedIn …) -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Xiang WAN (万翔)">
-  <meta property="og:description" content="Academic homepage of Xiang WAN (万翔): research, publications, and contact.">
+  <meta property="og:description" content="Xiang Wan (万翔), Master’s student in Computer Science at Université Paris-Saclay: computational social science and predictability.">
   <meta property="og:url" content="https://vvcrlio-ui.github.io/">
   <meta name="twitter:card" content="summary">
   <!-- Tells search engines this page is about a person called Xiang WAN.
-       Fill in affiliation and add profile links (Scholar, ORCID, LinkedIn …) to sameAs. -->
+       Add profile links (Scholar, ORCID, LinkedIn …) to sameAs as they exist. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -22,8 +22,10 @@
     "name": "Xiang WAN",
     "alternateName": ["Xiang Wan", "万翔", "Wan Xiang"],
     "url": "https://vvcrlio-ui.github.io/",
-    "jobTitle": "Researcher",
-    "affiliation": { "@type": "Organization", "name": "[Your University]" },
+    "jobTitle": "Master's student in Computer Science",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Université Paris-Saclay", "url": "https://www.universite-paris-saclay.fr" },
+    "knowsAbout": ["Computational social science", "Predictability"],
+    "email": "mailto:xiang.wan@universite-paris-saclay.fr",
     "sameAs": ["https://github.com/vvcrlio-ui"]
   }
   </script>
@@ -48,7 +50,7 @@
   <header class="site-header">
     <a class="wordmark" href="index.html#top">Xiang WAN</a>
     <a data-item="about" href="index.html#about"><span class="roll"><span data-label="about">about</span></span></a>
-    <a data-item="publications" href="index.html#publications"><span class="roll"><span data-label="publications">publications</span></span></a>
+    <a data-item="research" href="index.html#research"><span class="roll"><span data-label="research">research</span></span></a>
     <a data-item="others" href="others.html"><span class="roll"><span data-label="others">others</span></span></a>
   </header>
 
@@ -59,19 +61,19 @@
       <div class="intro">
         <h1 class="name">Xiang WAN</h1>
         <p class="name-zh" lang="zh"><span>万翔</span></p>
-        <p class="tagline"><span>Researcher at [Your University], working on
-          [research area 1] and [research area 2].</span></p>
+        <p class="tagline"><span>Master’s student in Computer Science at Université Paris-Saclay,
+          interested in computational social science and predictability.</span></p>
       </div>
 
-      <!-- Research topics, scrolling (static when reduced motion is on) -->
+      <!-- Scrolling bands (static when reduced motion is on) -->
       <div class="bands" aria-hidden="true">
         <div class="band"><div class="band__track">
-          <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
-          <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
+          <span>computational social science</span><span>predictability</span>
+          <span>computational social science</span><span>predictability</span>
         </div></div>
         <div class="band band--reverse"><div class="band__track">
-          <span>[method a]</span><span>[method b]</span><span>[application c]</span>
-          <span>[method a]</span><span>[method b]</span><span>[application c]</span>
+          <span>université paris-saclay</span><span>computer science</span>
+          <span>université paris-saclay</span><span>computer science</span>
         </div></div>
       </div>
     </section>
@@ -84,98 +86,79 @@
       </div>
       <div class="content">
         <p class="lede">
-          I am a [PhD student / postdoc / assistant professor] in the
-          [Department] at [University], advised by
-          <a href="#">[Advisor Name]</a>.
+          I am a Master’s student in Computer Science at
+          <a href="https://www.universite-paris-saclay.fr/en">Université Paris-Saclay</a>.
         </p>
         <p>
-          My research focuses on [one-sentence summary of your research
-          questions and methods]. Before that, I received my [degree] from
-          [University] in [year]. I am broadly interested in [topic],
-          [topic], and [topic].
+          I am interested in computational social science, and in particular
+          in predictability: how far human and social behaviour can be
+          predicted from data, and what sets the limits.
         </p>
         <p class="tags">
-          <a href="cv.pdf">cv</a>
-          <a href="https://scholar.google.com/">google scholar</a>
           <a href="https://github.com/vvcrlio-ui">github</a>
-          <a href="mailto:your.email@university.edu">email</a>
+          <a href="mailto:xiang.wan@universite-paris-saclay.fr">email</a>
         </p>
+        <!-- Add when available:
+          <a href="cv.pdf">cv</a>
+          <a href="https://scholar.google.com/citations?user=…">google scholar</a>
+        -->
       </div>
     </section>
 
-    <!-- ===== News ===== -->
+    <!-- ===== Research ===== -->
+    <section id="research" class="row" data-nav="research">
+      <div class="label"><h2>research</h2></div>
+      <div class="content">
+        <dl class="facts facts--wide">
+          <dt>field:</dt><dd>Computational social science</dd>
+          <dt>focus:</dt><dd>Predictability of human and social behaviour</dd>
+          <dt>papers:</dt><dd>None yet. Papers and projects will be listed here.</dd>
+        </dl>
+        <!-- Publication template, one <li> per paper:
+        <ol class="pubs">
+          <li>
+            <p class="meta">venue 2027</p>
+            <a class="pub-title" href="…">Paper title</a>
+            <p class="authors"><b>Xiang WAN</b>, Co-author A, Co-author B</p>
+            <p class="tags"><a href="…">pdf</a><a href="…">code</a></p>
+          </li>
+        </ol>
+        -->
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section id="education" class="row" data-nav="about">
+      <div class="label"><h2>education</h2></div>
+      <div class="content">
+        <ul class="dated">
+          <li><time>now</time><span><b>MSc Computer Science</b>, Université Paris-Saclay</span></li>
+        </ul>
+        <!-- Add earlier degrees as:
+          <li><time>2021 – 2025</time><span><b>BSc …</b>, University …</span></li>
+        -->
+      </div>
+    </section>
+
+    <!-- News, teaching & service: add back when there is something to list.
     <section id="news" class="row" data-nav="about">
       <div class="label"><h2>news</h2></div>
       <div class="content">
         <ul class="dated">
-          <li><time>2026.09</time><span>Paper “[Title]” accepted to [Venue 2026].</span></li>
-          <li><time>2026.06</time><span>Gave a talk at [Workshop / Institution] on [topic].</span></li>
-          <li><time>2026.03</time><span>Started as a [role] at [Institution].</span></li>
+          <li><time>2026.09</time><span>…</span></li>
         </ul>
       </div>
     </section>
-
-    <!-- ===== Publications ===== -->
-    <section id="publications" class="row" data-nav="publications">
-      <div class="label">
-        <h2>publications</h2>
-        <p class="note">* equal contribution</p>
-      </div>
-      <div class="content">
-        <ol class="pubs">
-          <li>
-            <p class="meta">[venue] 2026</p>
-            <a class="pub-title" href="#">[Paper Title One: A Clear and Descriptive Name]</a>
-            <p class="authors"><b>Xiang WAN</b>, [Co-author A], [Co-author B]</p>
-            <p class="tags"><a href="#">pdf</a><a href="#">code</a><a href="#">bibtex</a></p>
-          </li>
-          <li>
-            <p class="meta">[venue] 2025</p>
-            <a class="pub-title" href="#">[Paper Title Two]</a>
-            <p class="authors">[Co-author A]*, <b>Xiang WAN</b>*, [Co-author C]</p>
-            <p class="tags"><a href="#">pdf</a><a href="#">arxiv</a></p>
-          </li>
-          <li>
-            <p class="meta">[workshop] 2024</p>
-            <a class="pub-title" href="#">[Paper Title Three]</a>
-            <p class="authors"><b>Xiang WAN</b>, [Co-author D]</p>
-            <p class="tags"><a href="#">pdf</a></p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ===== Experience / Education ===== -->
-    <section id="experience" class="row" data-nav="about">
-      <div class="label"><h2>experience</h2></div>
-      <div class="content">
-        <ul class="dated">
-          <li><time>2024 – now</time><span><b>[Role]</b>, [Institution]</span></li>
-          <li><time>2020 – 2024</time><span><b>[Degree]</b>, [University]</span></li>
-          <li><time>2016 – 2020</time><span><b>[Degree]</b>, [University]</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===== Teaching & Service ===== -->
-    <section id="service" class="row" data-nav="about">
-      <div class="label"><h2>teaching &amp; service</h2></div>
-      <div class="content">
-        <ul class="plain">
-          <li>Teaching assistant, [Course name], [Term]</li>
-          <li>Reviewer: [Venue], [Venue]</li>
-        </ul>
-      </div>
-    </section>
+    -->
 
     <!-- ===== Contact ===== -->
     <section id="contact" class="row" data-nav="about">
       <div class="label"><h2>contact</h2></div>
       <div class="content">
         <dl class="contact">
-          <dt>m:</dt><dd><a href="mailto:your.email@university.edu">your.email@university.edu</a></dd>
+          <dt>m:</dt><dd><a href="mailto:xiang.wan@universite-paris-saclay.fr">xiang.wan@universite-paris-saclay.fr</a></dd>
           <dt>gh:</dt><dd><a href="https://github.com/vvcrlio-ui">vvcrlio-ui</a></dd>
-          <dt>a:</dt><dd>[Office / Building, Room], [University, City, Country]</dd>
+          <dt>a:</dt><dd>Université Paris-Saclay, France</dd>
         </dl>
       </div>
     </section>

@@ -10,7 +10,7 @@ A plain HTML + CSS academic homepage (no build step), served by GitHub Pages.
 - `site.js` — header ■ marker, scrolling bands, click-to-enlarge photos.
 - `ascii.js` — the rotating character background (three.js AsciiEffect). The head is cut into horizontal layers that turn
   apart and back into line, after David Černý's Head of Franz Kafka in Prague. One model is picked at random per visit.
-- `assets/portrait-dither.png`, `assets/portrait.jpg` — dithered portrait and the greyscale photo shown on hover.
+- `assets/portrait-ascii.png`, `assets/portrait.jpg` — portrait drawn in characters, and the colour photo (light film grade) shown on hover.
 - `cv.pdf` — add your CV at the repo root so the "cv" link works.
 
 ## 3D model credits

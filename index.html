@@ -2,71 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Xiang Wan (万翔)</title>
-  <meta name="description" content="Xiang Wan (万翔) — academic homepage: research, publications, and contact.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Xiang WAN (万翔)</title>
+  <meta name="description" content="Xiang WAN (万翔) — academic homepage: research, publications, and contact.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Host+Grotesk:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Syne:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
 </head>
 <body>
 
-  <!-- Rotating character background (ascii.js) and four-column guide lines,
-       both after maximiliankaspar.com -->
-  <pre class="ascii" aria-hidden="true"></pre>
+  <!-- Rotating 3D scan drawn in characters (ascii.js) and the four-column guides -->
+  <div class="ascii" aria-hidden="true"></div>
   <div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
+  <!-- One nav item per column, each starting at its guide line -->
   <header class="site-header">
-    <a class="wordmark is-active" href="#top">xiang wan <span class="zh">万翔</span></a>
-    <nav aria-label="Main">
-      <a href="#about"><span class="roll"><span data-label="about">about</span></span></a>
-      <a href="#news"><span class="roll"><span data-label="news">news</span></span></a>
-      <a href="#publications"><span class="roll"><span data-label="publications">publications</span></span></a>
-      <a href="#experience"><span class="roll"><span data-label="experience">experience</span></span></a>
-      <a href="#contact"><span class="roll"><span data-label="contact">contact</span></span></a>
-    </nav>
+    <a class="wordmark" href="index.html#top">Xiang WAN</a>
+    <a data-item="about" href="index.html#about"><span class="roll"><span data-label="about">about</span></span></a>
+    <a data-item="publications" href="index.html#publications"><span class="roll"><span data-label="publications">publications</span></span></a>
+    <a data-item="others" href="others.html"><span class="roll"><span data-label="others">others</span></span></a>
   </header>
 
-  <main id="top">
+  <main>
 
-    <!-- ===== Intro ===== -->
-    <section class="intro" id="intro">
-      <h1 class="name">xiang<br>wan <span class="zh" lang="zh">万翔</span></h1>
-      <p class="tagline"><span>
-        Researcher at [Your University], working on
-        [research area 1] and [research area 2].
-      </span></p>
+    <!-- ===== Intro: fills the first screen, bands sit on its bottom edge ===== -->
+    <section class="hero" id="top" data-nav="top">
+      <div class="intro">
+        <h1 class="name">Xiang WAN</h1>
+        <p class="name-zh" lang="zh"><span>万翔</span></p>
+        <p class="tagline"><span>Researcher at [Your University], working on
+          [research area 1] and [research area 2].</span></p>
+      </div>
+
+      <!-- Research topics, scrolling (static when reduced motion is on) -->
+      <div class="bands" aria-hidden="true">
+        <div class="band"><div class="band__track">
+          <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
+          <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
+        </div></div>
+        <div class="band band--reverse"><div class="band__track">
+          <span>[method a]</span><span>[method b]</span><span>[application c]</span>
+          <span>[method a]</span><span>[method b]</span><span>[application c]</span>
+        </div></div>
+      </div>
     </section>
 
-    <!-- Research topics, scrolling (static when reduced motion is on) -->
-    <div class="bands" aria-hidden="true">
-      <div class="band"><div class="band__track">
-        <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
-        <span>[research area 1]</span><span>[research area 2]</span><span>[research area 3]</span>
-      </div></div>
-      <div class="band band--reverse"><div class="band__track">
-        <span>[method a]</span><span>[method b]</span><span>[application c]</span>
-        <span>[method a]</span><span>[method b]</span><span>[application c]</span>
-      </div></div>
-    </div>
-
     <!-- ===== About ===== -->
-    <section id="about" class="row">
+    <section id="about" class="row" data-nav="about">
       <div class="label">
         <h2>about</h2>
-        <img class="portrait" src="assets/portrait.svg" alt="Portrait of Xiang Wan" width="160" height="200">
+        <img class="portrait" src="assets/portrait.svg" alt="Portrait of Xiang WAN" width="160" height="200">
       </div>
       <div class="content">
-        <p>
+        <p class="lede">
           I am a [PhD student / postdoc / assistant professor] in the
           [Department] at [University], advised by
-          <a href="#">[Advisor Name]</a>. My research focuses on
-          [one-sentence summary of your research questions and methods].
+          <a href="#">[Advisor Name]</a>.
         </p>
         <p>
-          Before that, I received my [degree] from [University] in [year].
-          I am broadly interested in [topic], [topic], and [topic].
+          My research focuses on [one-sentence summary of your research
+          questions and methods]. Before that, I received my [degree] from
+          [University] in [year]. I am broadly interested in [topic],
+          [topic], and [topic].
         </p>
         <p class="tags">
           <a href="cv.pdf">cv</a>
@@ -78,7 +82,7 @@
     </section>
 
     <!-- ===== News ===== -->
-    <section id="news" class="row">
+    <section id="news" class="row" data-nav="about">
       <div class="label"><h2>news</h2></div>
       <div class="content">
         <ul class="dated">
@@ -90,7 +94,7 @@
     </section>
 
     <!-- ===== Publications ===== -->
-    <section id="publications" class="row">
+    <section id="publications" class="row" data-nav="publications">
       <div class="label">
         <h2>publications</h2>
         <p class="note">* equal contribution</p>
@@ -100,19 +104,19 @@
           <li>
             <p class="meta">[venue] 2026</p>
             <a class="pub-title" href="#">[Paper Title One: A Clear and Descriptive Name]</a>
-            <p class="authors"><b>Xiang Wan</b>, [Co-author A], [Co-author B]</p>
+            <p class="authors"><b>Xiang WAN</b>, [Co-author A], [Co-author B]</p>
             <p class="tags"><a href="#">pdf</a><a href="#">code</a><a href="#">bibtex</a></p>
           </li>
           <li>
             <p class="meta">[venue] 2025</p>
             <a class="pub-title" href="#">[Paper Title Two]</a>
-            <p class="authors">[Co-author A]*, <b>Xiang Wan</b>*, [Co-author C]</p>
+            <p class="authors">[Co-author A]*, <b>Xiang WAN</b>*, [Co-author C]</p>
             <p class="tags"><a href="#">pdf</a><a href="#">arxiv</a></p>
           </li>
           <li>
             <p class="meta">[workshop] 2024</p>
             <a class="pub-title" href="#">[Paper Title Three]</a>
-            <p class="authors"><b>Xiang Wan</b>, [Co-author D]</p>
+            <p class="authors"><b>Xiang WAN</b>, [Co-author D]</p>
             <p class="tags"><a href="#">pdf</a></p>
           </li>
         </ol>
@@ -120,7 +124,7 @@
     </section>
 
     <!-- ===== Experience / Education ===== -->
-    <section id="experience" class="row">
+    <section id="experience" class="row" data-nav="about">
       <div class="label"><h2>experience</h2></div>
       <div class="content">
         <ul class="dated">
@@ -132,7 +136,7 @@
     </section>
 
     <!-- ===== Teaching & Service ===== -->
-    <section id="service" class="row">
+    <section id="service" class="row" data-nav="about">
       <div class="label"><h2>teaching &amp; service</h2></div>
       <div class="content">
         <ul class="plain">
@@ -143,7 +147,7 @@
     </section>
 
     <!-- ===== Contact ===== -->
-    <section id="contact" class="row">
+    <section id="contact" class="row" data-nav="about">
       <div class="label"><h2>contact</h2></div>
       <div class="content">
         <dl class="contact">
@@ -157,44 +161,12 @@
   </main>
 
   <footer class="site-footer">
-    <span>© 2026 xiang wan</span>
+    <span>© 2026 Xiang WAN</span>
+    <span class="credit" data-model-credit>3D scans: Fraunhofer IGD · Infinite Realities · Stanford</span>
     <a href="#top">back to top ↑</a>
   </footer>
 
-  <script src="ascii.js" defer></script>
-
-  <script>
-    // Move the ■ marker in the header to the section currently in view.
-    (function () {
-      var links = document.querySelectorAll('.site-header a');
-      var map = {};
-      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-      if (!('IntersectionObserver' in window)) return;
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          links.forEach(function (a) { a.classList.remove('is-active'); });
-          (map[e.target.id] || map.top).classList.add('is-active');
-        });
-      }, { rootMargin: '-40% 0px -55% 0px' });
-      document.querySelectorAll('main > section[id]').forEach(function (s) { io.observe(s); });
-    })();
-
-    // Scrolling bands: the track holds two identical halves and slides by -50%,
-    // so each half must be at least as wide as the screen for a seamless loop.
-    (function () {
-      document.querySelectorAll('.band__track').forEach(function (track) {
-        var n = track.children.length / 2;
-        var unit = Array.prototype.slice.call(track.children, 0, n)
-          .map(function (el) { return el.outerHTML; }).join('');
-        var reps = 1;
-        while (track.scrollWidth / 2 < window.innerWidth * 1.2 && reps < 10) {
-          reps++;
-          var half = new Array(reps + 1).join(unit);
-          track.innerHTML = half + half;
-        }
-      });
-    })();
-  </script>
+  <script src="site.js" defer></script>
+  <script type="module" src="ascii.js"></script>
 </body>
 </html>

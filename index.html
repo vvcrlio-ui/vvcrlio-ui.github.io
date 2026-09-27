@@ -12,6 +12,7 @@
   <meta property="og:title" content="Xiang WAN (万翔)">
   <meta property="og:description" content="Xiang Wan (万翔), Master’s student in Computer Science at Université Paris-Saclay: computational social science and predictability.">
   <meta property="og:url" content="https://vvcrlio-ui.github.io/">
+  <meta property="og:image" content="https://vvcrlio-ui.github.io/assets/portrait.jpg">
   <meta name="twitter:card" content="summary">
   <!-- Tells search engines this page is about a person called Xiang WAN.
        Add profile links (Scholar, ORCID, LinkedIn …) to sameAs as they exist. -->
@@ -22,6 +23,7 @@
     "name": "Xiang WAN",
     "alternateName": ["Xiang Wan", "万翔", "Wan Xiang"],
     "url": "https://vvcrlio-ui.github.io/",
+    "image": "https://vvcrlio-ui.github.io/assets/portrait.jpg",
     "jobTitle": "Master's student in Computer Science",
     "affiliation": { "@type": "CollegeOrUniversity", "name": "Université Paris-Saclay", "url": "https://www.universite-paris-saclay.fr" },
     "knowsAbout": ["Computational social science", "Predictability"],
@@ -82,7 +84,11 @@
     <section id="about" class="row" data-nav="about">
       <div class="label">
         <h2>about</h2>
-        <img class="portrait" src="assets/portrait.svg" alt="Portrait of Xiang WAN" width="160" height="200">
+        <!-- Dithered by default, the photo fades in on hover -->
+        <figure class="portrait">
+          <img class="portrait__photo" src="assets/portrait.jpg" alt="" width="800" height="1000" loading="lazy">
+          <img class="portrait__dither" src="assets/portrait-dither.png" alt="Xiang WAN above Barcelona, with the Sagrada Família behind" width="560" height="700">
+        </figure>
       </div>
       <div class="content">
         <p class="lede">
@@ -132,7 +138,7 @@
       <div class="label"><h2>education</h2></div>
       <div class="content">
         <ul class="dated">
-          <li><time>now</time><span><b>MSc Computer Science</b>, Université Paris-Saclay</span></li>
+          <li><time>2025 – now</time><span><b>MSc Computer Science</b>, Université Paris-Saclay</span></li>
         </ul>
         <!-- Add earlier degrees as:
           <li><time>2021 – 2025</time><span><b>BSc …</b>, University …</span></li>

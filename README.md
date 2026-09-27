@@ -4,7 +4,7 @@ Personal website of Xiang WAN (万翔).
 A plain HTML + CSS academic homepage (no build step), served by GitHub Pages.
 
 - `index.html` — home: intro, about, news, publications, experience, contact. Replace every `[placeholder]`.
-- `others.html` — travel and photography. Put photos in `assets/photos/` and point each `<img src>` at them;
+- `others.html` — travel and photography (hidden for now: not linked from the nav, `noindex`, not in the sitemap). Put photos in `assets/photos/` and point each `<img src>` at them;
   copy an `<article class="trip">` block per trip, or a `<button class="photo">` per photo.
 - `style.css` — design (colours, fonts and spacing are tokens in `:root` at the top).
 - `site.js` — header ■ marker, scrolling bands, click-to-enlarge photos.

@@ -1,0 +1,500 @@
+/* ------------------------------------------------------------
+   Academic homepage mixing two references:
+
+   maximiliankaspar.com – black on white, a rotating 3D scan drawn in
+                         characters behind the page (ascii.js), four
+                         columns with visible guide lines and one nav
+                         item starting at each line, a ■ that marks the
+                         current page, labels in column 2 and text in
+                         columns 3–4, inverted link hover, mono captions.
+   lorenzodaldosso.it  – a huge centred name, full-width scrolling
+                         bands between thin rules, rolling nav labels.
+
+   Changed for readability: 17px body text (both references use
+   12–14px), the character background fades once you scroll past the
+   intro, capped line length, faint guide lines, and the scrolling
+   bands only repeat what is already written elsewhere. All motion
+   stops when reduced motion is requested.
+   ------------------------------------------------------------ */
+
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --muted: #555555;          /* 7.5:1 on white */
+  --line: #e3e3e3;
+  --rule: #000000;
+  --ascii: #adadad;          /* same grey as the reference */
+  --display: "Syne", "Host Grotesk", "Noto Sans SC", sans-serif;
+  --sans: "Host Grotesk", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: "Fragment Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --pad: 10px;               /* inset from each guide line */
+  --edge: 5px;               /* page edge to the first guide */
+  --hh: 50px;                /* header height */
+  --measure: 40rem;          /* ~70 characters per line */
+  --ease: cubic-bezier(.19, 1, .22, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--hh) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 1.0625rem;      /* 17px */
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--fg); color: var(--bg); }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+b { font-weight: 600; }
+h1, h2, h3 { text-wrap: balance; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover, a:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+}
+a:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+/* ---------- Background layers ---------- */
+
+.ascii {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  color: var(--ascii);
+  pointer-events: none;
+  user-select: none;
+}
+
+.guides {
+  position: fixed;
+  inset: 0 var(--edge);
+  z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  pointer-events: none;
+}
+.guides i { border-left: 1px solid var(--line); }
+.guides i:last-child { border-right: 1px solid var(--line); }
+
+/* Shared 4-column grid, aligned with the guides */
+.site-header, .row, .site-footer, .gallery, .page-head {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.row, .site-footer, .gallery, .page-head { margin: 0 var(--edge); }
+.row > *, .site-footer > *, .page-head > * { padding: 0 var(--pad); }
+
+/* ---------- Header: one item per column ---------- */
+
+.site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  height: var(--hh);
+  align-items: center;
+  padding: 0 var(--edge);
+  background: var(--bg);
+  font-family: var(--mono);
+  font-size: .875rem;
+  line-height: 1;
+}
+
+.site-header > a {
+  position: relative;
+  justify-self: start;
+  margin-left: var(--pad);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-header > a:hover, .site-header > a:focus-visible { background: none; color: inherit; }
+
+/* The wordmark always carries its ■ … */
+.wordmark::before {
+  content: "";
+  display: inline-block;
+  width: .72em;
+  height: .72em;
+  margin-right: .6em;
+  background: currentColor;
+}
+/* … the other items show one, hanging left of their guide line, when current */
+.site-header [data-item]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(-1 * var(--pad) - 1.1em);
+  width: .72em;
+  height: .72em;
+  margin-top: -.36em;
+  background: currentColor;
+  opacity: 0;
+}
+.site-header [data-item].is-active::before { opacity: 1; }
+
+/* Rolling label on hover: the word slides up, a copy slides in */
+.roll {
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: 1.3;
+}
+.roll > span {
+  position: relative;
+  display: block;
+  transition: transform .75s var(--ease);
+}
+.roll > span::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+a:hover .roll > span, a:focus-visible .roll > span { transform: translateY(-100%); }
+
+/* ---------- Hero: exactly one screen, bands on its bottom edge ---------- */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--hh));
+  height: calc(100svh - var(--hh) - env(safe-area-inset-top, 0px));
+  min-height: 30rem;
+}
+
+.intro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;   /* name sits low, like the reference headline, leaving the bust's face clear */
+  padding: 1.5rem 1rem 2.25rem;
+  text-align: center;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3.25rem, 11.5vw, 11rem);
+  line-height: .95;
+  letter-spacing: -0.035em;
+}
+
+.name-zh {
+  margin: 1.1rem 0 0;
+  font-size: .9375rem;
+  letter-spacing: .6em;
+  text-indent: .6em;          /* keep the spaced glyphs centred */
+  color: var(--muted);
+}
+
+.tagline {
+  max-width: 34rem;
+  margin: 1.75rem auto 0;
+  line-height: 1.75;
+}
+/* white strip behind each line keeps it legible over the background */
+.tagline span, .page-lede span, .name-zh span {
+  background: var(--bg);
+  padding: .15em .4em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ---------- Scrolling bands ---------- */
+
+.band {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: clamp(4rem, 10.5vh, 6.5rem);
+  border-top: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.band__track {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-family: var(--display);
+  font-size: clamp(1.625rem, 3.4vw, 3rem);
+  letter-spacing: -0.02em;
+  animation: band 60s linear infinite;
+}
+.band--reverse .band__track { animation-direction: reverse; }
+.band:hover .band__track { animation-play-state: paused; }
+
+.band__track span { padding: 0 .6em; }
+.band__track span::after { content: "✳"; margin-left: 1.2em; font-size: .55em; vertical-align: .4em; }
+
+@keyframes band { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .band__track { animation: none; }
+  .roll > span { transition: none; }
+}
+
+/* ---------- Rows: label in column 2, text in columns 3–4 ---------- */
+
+.row { padding: 3.5rem 0; }
+.hero + .row { border-top: 1px solid var(--rule); padding-top: 4.5rem; }
+
+.label { grid-column: 2; }
+.content { grid-column: 3 / 5; max-width: calc(var(--measure) + 2 * var(--pad)); }
+
+h2, h3 {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.9;           /* align with first line of body text */
+}
+
+.lede {
+  font-size: 1.3125rem;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+}
+
+.note, .meta {
+  font-family: var(--mono);
+  font-size: .8125rem;
+  color: var(--muted);
+}
+.note { margin-top: .5rem; }
+
+.portrait {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4 / 5;
+  margin: 1rem 0 0;
+  background: var(--bg);
+}
+.portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.portrait__photo { z-index: 1; opacity: 0; transition: opacity .6s var(--ease); }
+.portrait:hover .portrait__photo { opacity: 1; }
+
+/* Small bordered mono links: cv, pdf, code … */
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tags a {
+  font-family: var(--mono);
+  font-size: .8125rem;
+  line-height: 1;
+  padding: .45em .6em;
+  border: 1px solid var(--fg);
+  text-decoration: none;
+}
+
+/* Inverted title chip, like the project headers on the reference */
+.chip {
+  display: inline-block;
+  padding: 0 .45em;
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* ---------- Lists ---------- */
+
+.dated, .plain, .pubs { list-style: none; margin: 0; padding: 0; }
+
+.dated li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  padding: .3rem 0;
+}
+.dated time, .contact dt, .facts dt {
+  font-family: var(--mono);
+  font-size: .8125rem;
+  line-height: 2.05;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.plain li { padding: .3rem 0; }
+
+.contact, .facts {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: .2rem 1rem;
+  margin: 0;
+}
+.contact { grid-template-columns: 2.5rem 1fr; }
+.facts--wide { margin-top: 0; }
+.contact dd, .facts dd { margin: 0; }
+.facts { margin-top: 1.25rem; }
+
+/* ---------- Publications ---------- */
+
+.pubs li + li { margin-top: 2rem; }
+.meta { margin: 0 0 .15rem; }
+
+.pub-title {
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.authors {
+  margin: .25rem 0 .6rem;
+  font-size: .9375rem;
+  color: var(--muted);
+}
+.authors b { color: var(--fg); font-weight: 500; }
+
+/* ---------- Others page ---------- */
+
+.page-head {
+  padding: clamp(4rem, 14vh, 9rem) 0 3.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.page-title {
+  grid-column: 2 / 5;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3.25rem, 10vw, 9rem);
+  line-height: .95;
+  letter-spacing: -0.035em;
+}
+.page-lede {
+  grid-column: 3 / 5;
+  max-width: calc(var(--measure) + 2 * var(--pad));
+  margin: 2rem 0 0;
+  font-size: 1.3125rem;
+  line-height: 1.6;
+}
+.page-lede span { padding: .1em .3em; }
+.page-index {
+  grid-column: 3 / 5;
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0 0;
+  font-family: var(--mono);
+  font-size: .875rem;
+}
+
+.trip + .trip { border-top: 1px solid var(--line); }
+.trip .row { padding-bottom: 2rem; }
+
+.gallery {
+  grid-auto-flow: row dense;
+  align-items: start;
+  row-gap: 1.75rem;
+  padding-bottom: 3.5rem;
+}
+
+.photo {
+  appearance: none;
+  display: block;
+  margin: 0;
+  padding: 0 var(--pad);
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: zoom-in;
+}
+.photo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: var(--line);
+}
+.photo .cap {
+  display: block;
+  margin-top: .45rem;
+  font-family: var(--mono);
+  font-size: .75rem;
+  color: var(--muted);
+}
+.photo:hover .cap { color: var(--fg); }
+.photo.is-open { grid-column: span 2; cursor: zoom-out; }
+.photo:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  align-items: baseline;
+  row-gap: .5rem;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: .75rem;
+  color: var(--muted);
+  background: var(--bg);
+}
+.site-footer .credit { grid-column: 2 / 4; }
+.site-footer a { grid-column: 4; text-decoration: none; }
+
+/* ---------- Medium screens: label in column 1 ---------- */
+
+@media (max-width: 1023px) {
+  .label { grid-column: 1; }
+  .content { grid-column: 2 / 5; }
+  .page-title { grid-column: 1 / 5; }
+  .page-lede, .page-index { grid-column: 2 / 5; }
+}
+
+/* ---------- Small screens: stacked, header keeps its four columns ---------- */
+
+@media (max-width: 767px) {
+  :root { --pad: 7px; --hh: 44px; }
+  body { font-size: 1rem; }
+  .site-header { font-size: .75rem; }
+  /* no room for a hanging ■ between columns: underline the current item */
+  .site-header [data-item]::before { display: none; }
+  .site-header [data-item].is-active .roll { box-shadow: inset 0 -1.5px 0 currentColor; }
+  .row { padding: 2.5rem 0; }
+  .hero + .row { padding-top: 3rem; }
+  .label, .content { grid-column: 1 / 5; }
+  .label { margin-bottom: .75rem; }
+  .lede, .page-lede { font-size: 1.125rem; }
+  .page-lede, .page-index { grid-column: 1 / 5; }
+  .portrait { max-width: 200px; }
+  .dated li { grid-template-columns: 1fr; gap: 0; padding: .45rem 0; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .photo.is-open { grid-column: 1 / -1; }
+  .site-footer > span:first-child { grid-column: 1 / 3; }
+  .site-footer a { grid-column: 3 / 5; justify-self: end; }
+  .site-footer .credit { grid-column: 1 / 5; grid-row: 2; }
+}
+
+@media print {
+  .ascii, .guides, .bands { display: none; }
+  .site-header { position: static; }
+}

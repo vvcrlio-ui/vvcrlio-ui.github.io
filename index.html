@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Xiang WAN (万翔)</title>
+  <meta name="description" content="Xiang Wan (万翔) is a Master’s student in Computer Science at Université Paris-Saclay, interested in computational social science and predictability.">
+  <link rel="canonical" href="https://vvcrlio-ui.github.io/">
+  <meta name="author" content="Xiang WAN (万翔)">
+  <!-- Link previews (WeChat, Slack, X, LinkedIn …) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Xiang WAN (万翔)">
+  <meta property="og:description" content="Xiang Wan (万翔), Master’s student in Computer Science at Université Paris-Saclay: computational social science and predictability.">
+  <meta property="og:url" content="https://vvcrlio-ui.github.io/">
+  <meta property="og:image" content="https://vvcrlio-ui.github.io/assets/portrait.jpg">
+  <meta name="twitter:card" content="summary">
+  <!-- Tells search engines this page is about a person called Xiang WAN.
+       Add profile links (Scholar, ORCID, LinkedIn …) to sameAs as they exist. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Xiang WAN",
+    "alternateName": ["Xiang Wan", "万翔", "Wan Xiang"],
+    "url": "https://vvcrlio-ui.github.io/",
+    "image": "https://vvcrlio-ui.github.io/assets/portrait.jpg",
+    "jobTitle": "Master's student in Computer Science",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Université Paris-Saclay", "url": "https://www.universite-paris-saclay.fr" },
+    "knowsAbout": ["Computational social science", "Predictability"],
+    "email": "mailto:xiang.wan@universite-paris-saclay.fr",
+    "sameAs": ["https://github.com/vvcrlio-ui"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Host+Grotesk:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Syne:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+
+  <!-- Rotating 3D scan drawn in characters (ascii.js) and the four-column guides -->
+  <div class="ascii" aria-hidden="true"></div>
+  <div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <!-- One nav item per column, each starting at its guide line -->
+  <header class="site-header">
+    <a class="wordmark" href="index.html#top">Xiang WAN</a>
+    <a data-item="about" href="index.html#about"><span class="roll"><span data-label="about">about</span></span></a>
+    <a data-item="research" href="index.html#research"><span class="roll"><span data-label="research">research</span></span></a>
+    <!-- others.html (travel & photography) is hidden until it has content. To show it, add:
+    <a data-item="others" href="others.html"><span class="roll"><span data-label="others">others</span></span></a>
+    -->
+  </header>
+
+  <main>
+
+    <!-- ===== Intro: fills the first screen, bands sit on its bottom edge ===== -->
+    <section class="hero" id="top" data-nav="top">
+      <div class="intro">
+        <h1 class="name">Xiang WAN</h1>
+        <p class="name-zh" lang="zh"><span>万翔</span></p>
+        <p class="tagline"><span>Master’s student in Computer Science at Université Paris-Saclay,
+          interested in computational social science and predictability.</span></p>
+      </div>
+
+      <!-- Scrolling bands (static when reduced motion is on) -->
+      <div class="bands" aria-hidden="true">
+        <div class="band"><div class="band__track">
+          <span>computational social science</span><span>predictability</span>
+          <span>computational social science</span><span>predictability</span>
+        </div></div>
+        <div class="band band--reverse"><div class="band__track">
+          <span>université paris-saclay</span><span>computer science</span>
+          <span>université paris-saclay</span><span>computer science</span>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="row" data-nav="about">
+      <div class="label">
+        <h2>about</h2>
+        <!-- Drawn in characters by default; the colour photo (light film grade) fades in on hover -->
+        <figure class="portrait">
+          <img class="portrait__photo" src="assets/portrait.jpg" alt="" width="1000" height="1250" loading="lazy">
+          <img class="portrait__ascii" src="assets/portrait-ascii.png" alt="Xiang WAN above Barcelona, with the Sagrada Família behind" width="840" height="1050">
+        </figure>
+      </div>
+      <div class="content">
+        <p class="lede">
+          I am a Master’s student in Computer Science at
+          <a href="https://www.universite-paris-saclay.fr/en">Université Paris-Saclay</a>.
+        </p>
+        <p>
+          I am interested in computational social science, and in particular
+          in predictability: how far human and social behaviour can be
+          predicted from data, and what sets the limits.
+        </p>
+        <p class="tags">
+          <a href="https://github.com/vvcrlio-ui">github</a>
+          <a href="mailto:xiang.wan@universite-paris-saclay.fr">email</a>
+        </p>
+        <!-- Add when available:
+          <a href="cv.pdf">cv</a>
+          <a href="https://scholar.google.com/citations?user=…">google scholar</a>
+        -->
+      </div>
+    </section>
+
+    <!-- ===== Research ===== -->
+    <section id="research" class="row" data-nav="research">
+      <div class="label"><h2>research</h2></div>
+      <div class="content">
+        <dl class="facts facts--wide">
+          <dt>field:</dt><dd>Computational social science</dd>
+          <dt>focus:</dt><dd>Predictability of human and social behaviour</dd>
+        </dl>
+        <!-- Publication template, one <li> per paper:
+        <ol class="pubs">
+          <li>
+            <p class="meta">venue 2027</p>
+            <a class="pub-title" href="…">Paper title</a>
+            <p class="authors"><b>Xiang WAN</b>, Co-author A, Co-author B</p>
+            <p class="tags"><a href="…">pdf</a><a href="…">code</a></p>
+          </li>
+        </ol>
+        -->
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section id="education" class="row" data-nav="about">
+      <div class="label"><h2>education</h2></div>
+      <div class="content">
+        <ul class="dated">
+          <li><time>2025 – now</time><span><b>MSc Computer Science</b>, Université Paris-Saclay</span></li>
+        </ul>
+        <!-- Add earlier degrees as:
+          <li><time>2021 – 2025</time><span><b>BSc …</b>, University …</span></li>
+        -->
+      </div>
+    </section>
+
+    <!-- News, teaching & service: add back when there is something to list.
+    <section id="news" class="row" data-nav="about">
+      <div class="label"><h2>news</h2></div>
+      <div class="content">
+        <ul class="dated">
+          <li><time>2026.09</time><span>…</span></li>
+        </ul>
+      </div>
+    </section>
+    -->
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="row" data-nav="about">
+      <div class="label"><h2>contact</h2></div>
+      <div class="content">
+        <dl class="contact">
+          <dt>m:</dt><dd><a href="mailto:xiang.wan@universite-paris-saclay.fr">xiang.wan@universite-paris-saclay.fr</a></dd>
+          <dt>gh:</dt><dd><a href="https://github.com/vvcrlio-ui">vvcrlio-ui</a></dd>
+          <dt>a:</dt><dd>Université Paris-Saclay, France</dd>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Xiang WAN</span>
+    <span class="credit" data-model-credit>3D scans: SMK – Statens Museum for Kunst, public domain</span>
+    <a href="#top">back to top ↑</a>
+  </footer>
+
+  <script src="site.js" defer></script>
+  <script type="module" src="ascii.js"></script>
+</body>
+</html>

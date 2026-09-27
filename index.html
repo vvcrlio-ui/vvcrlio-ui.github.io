@@ -12,7 +12,9 @@
 </head>
 <body>
 
-  <!-- Four-column guide lines, as on maximiliankaspar.com -->
+  <!-- Rotating character background (ascii.js) and four-column guide lines,
+       both after maximiliankaspar.com -->
+  <pre class="ascii" aria-hidden="true"></pre>
   <div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
   <header class="site-header">
@@ -31,10 +33,10 @@
     <!-- ===== Intro ===== -->
     <section class="intro" id="intro">
       <h1 class="name">xiang<br>wan <span class="zh" lang="zh">万翔</span></h1>
-      <p class="tagline">
+      <p class="tagline"><span>
         Researcher at [Your University], working on
         [research area 1] and [research area 2].
-      </p>
+      </span></p>
     </section>
 
     <!-- Research topics, scrolling (static when reduced motion is on) -->
@@ -158,6 +160,8 @@
     <span>© 2026 xiang wan</span>
     <a href="#top">back to top ↑</a>
   </footer>
+
+  <script src="ascii.js" defer></script>
 
   <script>
     // Move the ■ marker in the header to the section currently in view.

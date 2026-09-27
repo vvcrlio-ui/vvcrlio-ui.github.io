@@ -1,26 +1,29 @@
 /* ------------------------------------------------------------
    Academic homepage mixing two references:
 
-   lorenzodaldosso.it  – warm cream paper and navy ink, a huge
-                         centred name, full-width scrolling bands
-                         between thin rules, rolling nav labels.
-   maximiliankaspar.com – four-column grid with visible guide lines,
+   maximiliankaspar.com – black on white, a rotating 3D shape drawn
+                         in characters behind the page (ascii.js),
+                         four-column grid with visible guide lines,
                          lowercase mono navigation with a ■ marker,
                          labels in column 2 and text in columns 3–4,
                          inverted link hover.
+   lorenzodaldosso.it  – a huge centred name, full-width scrolling
+                         bands between thin rules, rolling nav labels.
 
    Changed for readability: 17px body text (both references use
-   12–14px), no artwork behind the text, capped line length, faint
-   guide lines, and the scrolling bands only repeat what is already
-   written elsewhere (they stop when reduced motion is requested).
+   12–14px), the character background fades once you scroll past
+   the intro, capped line length, faint guide lines, and the
+   scrolling bands only repeat what is already written elsewhere.
+   All motion stops when reduced motion is requested.
    ------------------------------------------------------------ */
 
 :root {
-  --bg: #fffcf0;             /* cream paper */
-  --fg: #000310;             /* navy ink    */
-  --muted: #4d5060;          /* 7.9:1 on --bg */
-  --line: rgba(0, 3, 16, .09);
-  --rule: #000310;
+  --bg: #ffffff;
+  --fg: #000000;
+  --muted: #555555;          /* 7.5:1 on white */
+  --line: #e3e3e3;
+  --rule: #000000;
+  --ascii: #9a9a9a;
   --display: "Space Grotesk", "Inter", "Noto Sans SC", sans-serif;
   --sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
           "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -28,16 +31,6 @@
   --pad: 12px;               /* inset from each guide line */
   --measure: 40rem;          /* ~70 characters per line */
   --ease: cubic-bezier(.19, 1, .22, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0d16;
-    --fg: #f4f1e4;
-    --muted: #a9abb8;
-    --line: rgba(244, 241, 228, .08);
-    --rule: #f4f1e4;
-  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -77,6 +70,23 @@ a:hover, a:focus-visible {
   text-decoration: none;
 }
 a:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+/* ---------- Character background ---------- */
+
+.ascii {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--ascii);
+  white-space: pre;
+  pointer-events: none;
+  user-select: none;
+}
 
 /* ---------- Guide lines ---------- */
 
@@ -192,7 +202,14 @@ a:hover .roll > span, a:focus-visible .roll > span { transform: translateY(-100%
   max-width: 34rem;
   margin: 2.25rem auto 0;
   font-size: 1.0625rem;
-  line-height: 1.55;
+  line-height: 1.75;
+}
+/* white strip behind each line keeps it legible over the background */
+.tagline span {
+  background: var(--bg);
+  padding: .15em .4em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* ---------- Scrolling bands ---------- */
@@ -370,6 +387,6 @@ h2 {
 }
 
 @media print {
-  .guides, nav, .bands { display: none; }
+  .ascii, .guides, nav, .bands { display: none; }
   .site-header { position: static; }
 }

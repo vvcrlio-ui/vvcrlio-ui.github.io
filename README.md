@@ -7,3 +7,4 @@ A single-page academic homepage (plain HTML + CSS, no build step), served by Git
 - `style.css` — design (colors and fonts live in `:root` at the top).
 - `assets/portrait.svg` — placeholder photo; drop in `assets/portrait.jpg` and update the `<img src>`.
 - `cv.pdf` — add your CV at the repo root so the "cv" link works.
+- `ascii.js` — the rotating character background (no dependencies). Shapes, speed and density are set at the top of the file.
